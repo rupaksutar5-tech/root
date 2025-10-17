@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali 2025 ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #ffcc80, #ff6f00);
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      font-size: 1.5em;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      margin-top: 80px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    input {
+      margin-top: 20px;
+      padding: 12px;
+      width: 250px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      text-align: center;
+      font-size: 1em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1em;
+      border-radius: 25px;
+      border: none;
+      background-color: #fff;
+      color: #ff6f00;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ffe0b2;
+    }
+
+    .greeting {
+      display: none;
+      animation: glowIn 1.5s ease forwards;
+      margin-top: 100px;
+    }
+
+    @keyframes glowIn {
+      from { opacity: 0; filter: blur(10px); }
+      to { opacity: 1; filter: blur(0); }
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    h2 {
+      font-weight: 400;
+      margin-top: 20px;
+    }
+
+    .diya {
+      width: 150px;
+      animation: glow 1.5s infinite alternate;
+      margin-top: 40px;
+    }
+
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 10px yellow); }
+      to { filter: drop-shadow(0 0 30px orange); }
+    }
+
+    /* Fireworks canvas */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .share-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#whatsappShare { background-color: #25D366; color: #fff; }
+#facebookShare { background-color: #3b5998; color: #fff; }
+#twitterShare { background-color: #1DA1F2; color: #fff; }
+
+.share-btn:hover {
+  opacity: 0.8;
+}
+
+  </style>
+</head>
+<body>
+  <canvas id="fireworks"></canvas>
+  <audio id="diwaliSong" loop autoplay>
+  <source src="https://www.example.com/your-diwali-song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+  <header>🪔 Happy Diwali 2025 🪔</header>
+
+  <div class="container" id="formSection">
+    <h1>Celebrate the Festival of Lights!</h1>
+    <p>Enter your name to get your personalized Diwali wish 🎉</p>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <br>
+    <button onclick="showGreeting()">Light Up My Greeting</button>
+  </div>
+
+  <div class="greeting" id="greetingSection">
+    <h1 id="greetingText"></h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Diya_lamp_2021.jpg" class="diya" alt="Diya Lamp">
+    <h2>May this Diwali bring you joy, success, and prosperity. ✨</h2>
+  </div>
+<button id="shareBtn">Share My Greeting 🎉</button>
+<button id="toggleSong" style="margin-top:20px; padding:10px 20px; border:none; border-radius:25px; cursor:pointer; font-weight:bold;">
+  Pause Music 🎵
+</button>
+
+  <footer>Created with ❤️ for Diwali 2025</footer>
+
+  <script>
+    function showGreeting() {
+      const name = document.getElementById("nameInput").value.trim();
+      if (name === "") {
+        alert("Please enter your name!");
+        return;
+      }
+
+      document.getElementById("formSection").style.display = "none";
+      const greetingSection = document.getElementById("greetingSection");
+      document.getElementById("greetingText").innerHTML = `🪔 Happy Diwali, <span style="color:#fff176;">${name}</span>! ✨`;
+      greetingSection.style.display = "block";
+    }
+document.getElementById("shareBtn").addEventListener("click", () => {
+  const name = document.getElementById("nameInput").value.trim();
+  const shareText = `🪔 Happy Diwali, ${name}! Wishing you joy, success, and prosperity. ✨`;
+  const shareUrl = window.location.href; // Current page link
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Happy Diwali 2025 🎉",
+      text: shareText,
+      url: shareUrl
+    }).then(() => {
+      console.log("Greeting shared successfully!");
+    }).catch((err) => {
+      console.error("Error sharing:", err);
+    });
+  } else {
+    // Fallback: copy to clipboard
+    navigator.clipboard.writeText(`${shareText}\n${shareUrl}`).then(() => {
+      alert("Greeting copied to clipboard! You can now share it anywhere.");
+    });
+  }
+});
+
+    // Simple Fireworks animation
+    const canvas = document.getElementById("fireworks");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    window.addEventListener("resize", () => {
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+    });
+
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.radius = Math.random() * 3 + 1;
+        this.vx = (Math.random() - 0.5) * 5;
+        this.vy = Math.random() * -5 - 2;
+        this.alpha = 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= 0.01;
+      }
+
+      draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function createFirework() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height / 2;
+      const colors = ["#ffeb3b", "#ff5722", "#ff9800", "#ffffff"];
+      for (let i = 0; i < 50; i++) {
+        particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p, i) => {
+        p.update();
+        p.draw();
+        if (p.alpha <= 0) particles.splice(i, 1);
+      });
+    }
+
+    setInterval(createFirework, 1000);
+    animate();
+    function getShareText() {
+  const name = document.getElementById("nameInput").value.trim();
+  return `🪔 Happy Diwali, ${name}! Wishing you joy, success, and prosperity. ✨`;
+}
+
+document.getElementById("whatsappShare").addEventListener("click", () => {
+  const text = encodeURIComponent(getShareText());
+  window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
+});
+
+document.getElementById("facebookShare").addEventListener("click", () => {
+  const url = encodeURIComponent(window.location.href);
+  const quote = encodeURIComponent(getShareText());
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`, "_blank");
+});
+
+document.getElementById("twitterShare").addEventListener("click", () => {
+  const text = encodeURIComponent(getShareText());
+  const url = encodeURIComponent(window.location.href);
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+});
+function showGreeting() {
+  const name = document.getElementById("nameInput").value.trim();
+  if (name === "") {
+    alert("Please enter your name!");
+    return;
+  }
+
+  // Update URL with ?name= parameter
+  const newUrl = `${window.location.origin}${window.location.pathname}?name=${encodeURIComponent(name)}`;
+  window.history.replaceState({}, '', newUrl);
+
+  displayGreeting(name);
+}
+
+function displayGreeting(name) {
+  document.getElementById("formSection").style.display = "none";
+  const greetingSection = document.getElementById("greetingSection");
+  document.getElementById("greetingText").innerHTML = `🪔 Happy Diwali, <span style="color:#fff176;">${name}</span>! ✨`;
+  greetingSection.style.display = "block";
+}
+// Check URL on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  if (name) {
+    displayGreeting(name);
+  }
+});
+const song = document.getElementById("diwaliSong");
+const toggleBtn = document.getElementById("toggleSong");
+
+toggleBtn.addEventListener("click", () => {
+  if (song.paused) {
+    song.play();
+    toggleBtn.innerText = "Pause Music 🎵";
+  } else {
+    song.pause();
+    toggleBtn.innerText = "Play Music 🎵";
+  }
+});
+
+  </script>
+</body>
+</html>
+
+

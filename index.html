@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali 2025 ✨</title>
+   <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <canvas id="fireworks"></canvas>
+<audio id="diwaliSong" loop>
+  <source src="relax-music-diwali-music-flute-instrumental-48k_W6CCwovA (2).mp3" type="audio/mp3">
+</audio>
+
+<!-- Floating Music Button -->
+<button id="musicBtn" title="Play / Pause Music">🎵</button>
+
+
+  <header>🪔 Happy Diwali 2025 🪔</header>
+
+  <!-- Form section -->
+  <div class="container" id="formSection">
+    <h1>Celebrate the Festival of Lights!</h1>
+    <p>Enter your name to get your personalized Diwali wish 🎉</p>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <br>
+    <button id="generateBtn">Light Up My Greeting</button>
+  </div>
+
+  <!-- Greeting section -->
+  <div class="greeting" id="greetingSection">
+    <h1 id="greetingText"></h1>
+    <img src="diya-1.png" class="diya" alt="Diya Lamp">
+    <h2>🪔✨ ✨🪔
+
+May this Diwali fill your life with joy, peace, and prosperity. Let the divine lights of diyas brighten your home and heart with happiness. Celebrate the festival with love, laughter, and positivity all around. May Goddess Lakshmi bless you with wealth and success, and Lord Ganesha remove all obstacles from your life. Wishing you and your family a sparkling, safe, and joyful Diwali filled with warmth and new beginnings!  🪔✨</h2>
+
+    <button id="shareBtn">Share My Greeting 🎉</button>
+    <button id="makeOwnBtn">Make Your Own Personalized Greeting 🎁</button>
+    <button id="toggleSong" style="margin-top:20px;">Pause Music 🎵</button>
+  </div>
+
+  <footer>Created with ❤️ for Diwali 2025</footer><br>
+  <footer>
+  <p>© 2025 | Designed & Developed by Rupak Sutar</p>
+  <p>👀 Visitors: <span id="visitorCount">0</span></p>
+</footer>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+ <script src="script.js"></script>
+  
+</body>
+</html>

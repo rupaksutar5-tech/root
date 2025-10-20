@@ -35,7 +35,7 @@
     document.getElementById("shareBtn").addEventListener("click", () => {
       const params = new URLSearchParams(window.location.search);
       const name = params.get("name") || "my friend";
-      const shareText = `🪔 Happy Diwali, ${name}! Wishing you joy, success, and prosperity. ✨`;
+      const shareText = `🪔 ${name}! Wishing you clike on this link ✨`;
       const shareUrl = window.location.href;
 
       if (navigator.share) {
@@ -193,3 +193,4 @@ visitorRef.get().then((doc) => {
 }).catch((error) => {
   console.error("Error fetching visitor count: ", error);
 });
+
